@@ -1,42 +1,35 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import styled from "styled-components"
+import Img from "gatsby-image"
+import Logo from "../images/logo.png"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+const Header = () => (
+  <HeaderNav>
+    <img src={Logo} style={{ maxWidth: "200px", paddingLeft: 20 }} />
+    <ul>
+      <li>Portfolios</li>
+      <li>Background</li>
+    </ul>
+  </HeaderNav>
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+const HeaderNav = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 2fr 7fr;
+  color: var(--grey-300);
+  font-size: 1.2rem;
+  min-height: 20vh;
+  align-items: center;
+  font-size: 1.4rem;
+  box-shadow: var(--shadow);
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 80px;
+  }
+`
 
 export default Header
