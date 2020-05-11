@@ -30,7 +30,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `https://miree-api.herokuapp.com`,
+        apiURL: `https://strapi-miree.herokuapp.com`,
         queryLimit: 1000, // Default to 100
         contentTypes: [`student-portfolios`],
       },
