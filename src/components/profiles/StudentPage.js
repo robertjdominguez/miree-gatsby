@@ -16,9 +16,7 @@ const StudentPage = ({ data }) => {
               {student.mantra.content[0].content[0].value}
             </p>
           </div>
-          <div>
-            <Img fixed={student.image.fixed} />
-          </div>
+          <Img fixed={student.image.fixed} />
           <div>
             <h4>Leadership Profile</h4>
             <p>{student.profile.content[0].content[0].value}</p>
@@ -38,15 +36,24 @@ const PageWrapper = styled.div`
   max-width: 1000px;
   margin-top: 100px;
   padding-bottom: 200px;
+
+  @media (max-width: 1000px) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 `
 
 const Student = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: 125px;
   min-height: 50vh;
   place-items: start start;
   grid-gap: 50px;
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+  }
 
   h1 {
     font-weight: 200;
