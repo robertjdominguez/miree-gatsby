@@ -35,6 +35,11 @@ const Card = styled.div`
   grid-template-columns: 1fr 1fr;
   box-shadow: var(--shadow);
   margin-bottom: 20px;
+  background: white;
+
+  &:hover a {
+    color: var(--gold);
+  }
 
   h2 {
     margin-top: 0;
@@ -54,6 +59,7 @@ const Card = styled.div`
     margin-bottom: 20px;
     color: black;
     text-decoration: none;
+    transition: ease-in-out 0.3s;
   }
 `
 

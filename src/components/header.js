@@ -8,8 +8,17 @@ const Header = () => (
   <HeaderNav>
     <img src={Logo} style={{ maxWidth: "200px", paddingLeft: 20 }} />
     <ul>
-      <li>Portfolios</li>
-      <li>Background</li>
+      <li>
+        <Link to="#portfolios">Portfolios</Link>
+      </li>
+      <li>
+        <a
+          target="_blank"
+          href="https://www.altamontschool.org/academics/leadership"
+        >
+          Background
+        </a>
+      </li>
     </ul>
   </HeaderNav>
 )
@@ -29,6 +38,20 @@ const HeaderNav = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 80px;
+  }
+
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+      color: var(--gold);
+    }
   }
 `
 

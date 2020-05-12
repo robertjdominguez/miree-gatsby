@@ -25,7 +25,7 @@ const StudentPage = ({ data }) => {
             <h4 style={{ marginTop: 40 }}>Miree Project</h4>
             <p>{student.Project}</p>
           </div>
-          <Link>&larr; Back to leadership portfolios</Link>
+          <Link to="/#portfolios">&larr; Back to leadership portfolios</Link>
         </Student>
       </PageWrapper>
     </Layout>
@@ -65,6 +65,11 @@ const Student = styled.div`
   a {
     color: black;
     text-decoration: none;
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+      color: var(--gold);
+    }
   }
 `
 

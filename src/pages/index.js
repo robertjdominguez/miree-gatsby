@@ -53,7 +53,7 @@ const IndexPage = () => (
                   Miree Ethical Leadership at The Altamont School. Enjoy!
                 </p>
                 <ButtonBox>
-                  <Link>Student Portfolios</Link>
+                  <Link to="#portfolios">Student Portfolios</Link>
                   <a href="">Help with COVID</a>
                 </ButtonBox>
               </div>
@@ -72,6 +72,13 @@ const HeaderText = styled.div`
   margin-left: 100px;
   padding-top: 80px;
   color: white;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr;
+    padding-bottom: 50px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
 
   p {
     line-height: 1.8rem;

@@ -28,7 +28,7 @@ const ALL_STUDENTS_QUERY = graphql`
 
 const StudentGallery = () => {
   return (
-    <Gallery>
+    <Gallery id="portfolios">
       <GalleryWrapper>
         <StaticQuery
           query={ALL_STUDENTS_QUERY}
@@ -52,8 +52,15 @@ const GalleryWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 40px;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 `
 
 export default StudentGallery
