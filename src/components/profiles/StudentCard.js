@@ -9,17 +9,17 @@ const StudentCard = ({ content }) => {
   return (
     <Card>
       <div>
-        <h2>{content.node.Name}</h2>
+        <h2>{content.node.name}</h2>
         <TextTruncate
           line={8}
           element="span"
           truncateText="…"
-          text={content.node.Project}
+          text={content.node.project.content[0].content[0].value}
         />
-        <Link to={`/${content.node.Slug}`}>Read more &rarr;</Link>
+        <Link to={`/${content.node.slug}`}>Read more &rarr;</Link>
       </div>
       <Img
-        fixed={content.node.Image.childImageSharp.fixed}
+        fixed={content.node.image.fixed}
         objectFit="cover"
         style={{
           height: "100%",

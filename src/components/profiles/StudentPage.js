@@ -5,25 +5,25 @@ import Img from "gatsby-image"
 import { Link } from "gatsby"
 
 const StudentPage = ({ data }) => {
-  const student = data.strapiStudentPortfolios
+  const student = data.contentfulStudentPortfolios
   return (
     <Layout>
       <PageWrapper>
         <Student>
           <div style={{ gridColumn: "span 2" }}>
-            <h1>{student.Name}</h1>
+            <h1>{student.name}</h1>
             <p style={{ color: "rgba(143, 142, 142)", fontStyle: "Italic" }}>
-              {student.Mantra}
+              {student.mantra.content[0].content[0].value}
             </p>
           </div>
           <div>
-            <Img fixed={student.Image.childImageSharp.fixed} />
+            <Img fixed={student.image.fixed} />
           </div>
           <div>
             <h4>Leadership Profile</h4>
-            <p>{student.Profile}</p>
+            <p>{student.profile.content[0].content[0].value}</p>
             <h4 style={{ marginTop: 40 }}>Miree Project</h4>
-            <p>{student.Project}</p>
+            <p>{student.project.content[0].content[0].value}</p>
           </div>
           <Link to="/#portfolios">&larr; Back to leadership portfolios</Link>
         </Student>
@@ -77,17 +77,33 @@ export default StudentPage
 
 // Page query for student
 export const query = graphql`
-  query PageQuery($Slug: String!) {
-    strapiStudentPortfolios(Slug: { eq: $Slug }) {
-      Name
-      Mantra
-      Profile
-      Project
-      Image {
-        childImageSharp {
-          fixed(width: 300, height: 400) {
-            ...GatsbyImageSharpFixed
+  query PageQuery($slug: String!) {
+    contentfulStudentPortfolios(slug: { eq: $slug }) {
+      name
+      mantra {
+        content {
+          content {
+            value
           }
+        }
+      }
+      profile {
+        content {
+          content {
+            value
+          }
+        }
+      }
+      project {
+        content {
+          content {
+            value
+          }
+        }
+      }
+      image {
+        fixed(width: 300, height: 400) {
+          ...GatsbyContentfulFixed
         }
       }
     }

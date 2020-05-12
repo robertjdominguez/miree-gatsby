@@ -28,13 +28,21 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-strapi`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        apiURL: `https://strapi-miree.herokuapp.com`,
-        queryLimit: 1000, // Default to 100
-        contentTypes: [`student-portfolios`],
+        spaceId: `9j1cwo89254f`,
+        accessToken: `pG_Ce7tR-FJmUr4XdoeDD6GlUEBuK2f1ZjSkGzthzM4`,
       },
     },
+    // TODO: DELETE THIS SHIT BELOW
+    // {
+    //   resolve: `gatsby-source-strapi`,
+    //   options: {
+    //     apiURL: `https://strapi-miree.herokuapp.com`,
+    //     queryLimit: 1000, // Default to 100
+    //     contentTypes: [`student-portfolios`],
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
