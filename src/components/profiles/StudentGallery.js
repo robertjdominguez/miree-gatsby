@@ -5,19 +5,35 @@ import styled from "styled-components"
 
 const ALL_STUDENTS_QUERY = graphql`
   query allStudentsQuery {
-    allStrapiStudentPortfolios {
+    allContentfulStudentPortfolios {
       edges {
         node {
-          Name
-          Mantra
-          Profile
-          Project
-          Slug
-          Image {
-            childImageSharp {
-              fixed(width: 222, height: 316) {
-                ...GatsbyImageSharpFixed
+          name
+          mantra {
+            content {
+              content {
+                value
               }
+            }
+          }
+          slug
+          profile {
+            content {
+              content {
+                value
+              }
+            }
+          }
+          project {
+            content {
+              content {
+                value
+              }
+            }
+          }
+          image {
+            fixed(width: 300, height: 400) {
+              ...GatsbyContentfulFixed
             }
           }
         }
@@ -32,8 +48,8 @@ const StudentGallery = () => {
       <GalleryWrapper>
         <StaticQuery
           query={ALL_STUDENTS_QUERY}
-          render={({ allStrapiStudentPortfolios }) =>
-            allStrapiStudentPortfolios.edges.map(edge => (
+          render={({ allContentfulStudentPortfolios }) =>
+            allContentfulStudentPortfolios.edges.map(edge => (
               <StudentCard content={edge} />
             ))
           }

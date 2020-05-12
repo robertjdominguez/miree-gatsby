@@ -6,21 +6,21 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allStrapiStudentPortfolios {
+        allContentfulStudentPortfolios {
           edges {
             node {
-              Slug
+              slug
             }
           }
         }
       }
     `).then(results => {
-      results.data.allStrapiStudentPortfolios.edges.forEach(({ node }) => {
+      results.data.allContentfulStudentPortfolios.edges.forEach(({ node }) => {
         createPage({
-          path: `/${node.Slug}`,
+          path: `/${node.slug}`,
           component: path.resolve("src/components/profiles/StudentPage.js"),
           context: {
-            Slug: node.Slug,
+            slug: node.slug,
           },
         })
       })
