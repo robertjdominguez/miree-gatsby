@@ -6,7 +6,9 @@ import Logo from "../images/logo.png"
 
 const Header = () => (
   <HeaderNav>
-    <img src={Logo} style={{ maxWidth: "200px", paddingLeft: 20 }} />
+    <Link to="/">
+      <img src={Logo} style={{ maxWidth: "200px", paddingLeft: 20 }} />
+    </Link>
     <ul>
       <li>
         <Link to="#portfolios">Portfolios</Link>
