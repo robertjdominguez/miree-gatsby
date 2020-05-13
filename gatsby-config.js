@@ -34,15 +34,7 @@ module.exports = {
         accessToken: `pG_Ce7tR-FJmUr4XdoeDD6GlUEBuK2f1ZjSkGzthzM4`,
       },
     },
-    // TODO: DELETE THIS SHIT BELOW
-    // {
-    //   resolve: `gatsby-source-strapi`,
-    //   options: {
-    //     apiURL: `https://strapi-miree.herokuapp.com`,
-    //     queryLimit: 1000, // Default to 100
-    //     contentTypes: [`student-portfolios`],
-    //   },
-    // },
+    `@contentful/gatsby-transformer-contentful-richtext`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

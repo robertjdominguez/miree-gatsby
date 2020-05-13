@@ -8,7 +8,11 @@ const Block = ({ content }) => {
       <hr />
       <h2>{content.node.headline}</h2>
       <h5>Update from Katherine Berdy</h5>
-      <p>{content.node.information.content[0].content[0].value}</p>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: content.node.information.childContentfulRichText.html,
+        }}
+      />
     </Emergency>
   )
 }

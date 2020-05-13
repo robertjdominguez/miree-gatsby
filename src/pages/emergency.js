@@ -9,13 +9,10 @@ const EMERGENCY_QUERY = graphql`
     allContentfulEmergency(sort: { fields: [createdAt], order: DESC }) {
       edges {
         node {
-          node_locale
           headline
           information {
-            content {
-              content {
-                value
-              }
+            childContentfulRichText {
+              html
             }
           }
         }
@@ -51,6 +48,11 @@ const PageWrapper = styled.div`
   margin-left: 50px;
   margin-right: auto;
   max-width: 800px;
+
+  @media (max-width: 800px) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 
   a {
     color: black;
