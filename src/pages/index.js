@@ -54,7 +54,7 @@ const IndexPage = () => (
                 </p>
                 <ButtonBox>
                   <Link to="#portfolios">Student Portfolios</Link>
-                  <a href="">Help with COVID</a>
+                  <Link to="/emergency">Help with COVID</Link>
                 </ButtonBox>
               </div>
             </HeaderText>
