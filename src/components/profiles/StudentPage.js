@@ -53,6 +53,11 @@ const Student = styled.div`
   @media (max-width: 700px) {
     display: flex;
     flex-direction: column;
+
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   h1 {

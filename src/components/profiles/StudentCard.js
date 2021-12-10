@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import TextTruncate from "react-text-truncate"
 
 const StudentCard = ({ content }) => {
-  console.log(content)
+  console.log(content.node.name)
   return (
     <Card>
       <div>

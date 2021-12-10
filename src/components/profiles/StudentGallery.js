@@ -61,6 +61,7 @@ const StudentGallery = () => {
 
 const Gallery = styled.div`
   padding-top: 200px;
+  padding-bottom: 200px;
   background: rgba(201, 201, 201, 0.4);
 `
 
